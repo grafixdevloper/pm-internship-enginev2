@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Internship Finder - Find Your Perfect Internship</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>🎯 PM Internship Finder</h1>
+                <p>Find internships that match your skills</p>
+            </div>
+        </header>
+
+        <!-- Main Form -->
+        <main class="main-content">
+            <div class="form-container" id="profileForm">
+                <h2>Tell us about yourself</h2>
+                <p class="subtitle">We'll find the best internships for you</p>
+
+                <form id="candidateForm">
+                    <!-- Education Level -->
+                    <div class="form-group">
+                        <label for="education">📚 Your Education Level</label>
+                        <select id="education" name="education" required>
+                            <option value="">Choose your level</option>
+                            <option value="10th">10th Pass</option>
+                            <option value="12th">12th Pass</option>
+                            <option value="diploma">Diploma</option>
+                            <option value="undergraduate">Bachelor's Degree</option>
+                            <option value="postgraduate">Master's Degree</option>
+                        </select>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="form-group">
+                        <label for="skills">💡 Your Skills (Select all that apply)</label>
+                        <div class="skills-grid">
+                            <label class="skill-item">
+                                <input type="checkbox" name="skills" value="computer">
+                                <span>💻 Computer Skills</span>
+                            </label>
+                            <label class="skill-item">
+                                <input type="checkbox" name="skills" value="communication">
+                                <span>🗣️ Communication</span>
+                            </label>
+                            <label class="skill-item">
+                                <input type="checkbox" name="skills" value="sales">
+                                <span>📈 Sales</span>
+                            </label>
+                            <label class="skill-item">
+                                <input type="checkbox" name="skills" value="design">
+                                <span>🎨 Design</span>
+                            </label>
+                            <label class="skill-item">
+                                <input type="checkbox" name="skills" value="accounting">
+                                <span>📊 Accounting</span>
+                            </label>
+                            <label class="skill-item">
+                                <input type="checkbox" name="skills" value="teaching">
+                                <span>👩‍🏫 Teaching</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Interests -->
+                    <div class="form-group">
+                        <label for="interests">🎯 Which sectors interest you?</label>
+                        <div class="interests-grid">
+                            <label class="interest-item">
+                                <input type="checkbox" name="interests" value="technology">
+                                <span>💻 Technology</span>
+                            </label>
+                            <label class="interest-item">
+                                <input type="checkbox" name="interests" value="healthcare">
+                                <span>🏥 Healthcare</span>
+                            </label>
+                            <label class="interest-item">
+                                <input type="checkbox" name="interests" value="education">
+                                <span>📚 Education</span>
+                            </label>
+                            <label class="interest-item">
+                                <input type="checkbox" name="interests" value="finance">
+                                <span>💰 Finance</span>
+                            </label>
+                            <label class="interest-item">
+                                <input type="checkbox" name="interests" value="manufacturing">
+                                <span>🏭 Manufacturing</span>
+                            </label>
+                            <label class="interest-item">
+                                <input type="checkbox" name="interests" value="agriculture">
+                                <span>🌾 Agriculture</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="form-group">
+                        <label for="location">📍 Your Preferred Location</label>
+                        <select id="location" name="location" required>
+                            <option value="">Choose location</option>
+                            <option value="mumbai">Mumbai</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="bangalore">Bangalore</option>
+                            <option value="chennai">Chennai</option>
+                            <option value="kolkata">Kolkata</option>
+                            <option value="pune">Pune</option>
+                            <option value="hyderabad">Hyderabad</option>
+                            <option value="remote">Work from Home</option>
+                            <option value="any">Any Location</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        🔍 Find My Internships
+                    </button>
+                </form>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-container" id="resultsContainer" style="display: none;">
+                <div class="results-header">
+                    <h2>✨ Perfect Matches for You</h2>
+                    <p>Here are internships that match your profile</p>
+                </div>
+                <div id="recommendationsList" class="recommendations-list">
+                    <!-- Recommendations will be populated here -->
+                </div>
+                <button class="back-btn" onclick="showForm()">← Try Again</button>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-container" id="loadingContainer" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Finding perfect internships for you...</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>🇮🇳 PM Internship Scheme - Empowering India's Youth</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Internship Schema",
+  "description": "Schema for PM Internship opportunities",
+  "required": ["id", "title", "company", "sector", "location", "duration", "stipend", "requirements"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the internship"
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the internship position"
+    },
+    "company": {
+      "type": "string",
+      "description": "Name of the company offering the internship"
+    },
+    "sector": {
+      "type": "string",
+      "enum": ["technology", "healthcare", "education", "finance", "manufacturing", "agriculture", "retail", "government", "nonprofit"],
+      "description": "Industry sector of the internship"
+    },
+    "location": {
+      "type": "string",
+      "description": "Location where the internship will take place"
+    },
+    "is_remote": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the internship can be done remotely"
+    },
+    "duration": {
+      "type": "string",
+      "description": "Duration of the internship (e.g., '3 months', '6 months')"
+    },
+    "stipend": {
+      "type": "string",
+      "description": "Stipend amount and frequency (e.g., '₹15,000/month')"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the internship role"
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "List of required skills or qualifications"
+    },
+    "preferred_education": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["10th", "12th", "diploma", "undergraduate", "postgraduate"]
+      },
+      "description": "Preferred education levels for applicants"
+    },
+    "application_deadline": {
+      "type": "string",
+      "format": "date",
+      "description": "Last date to apply for the internship"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Expected start date of the internship"
+    },
+    "contact_email": {
+      "type": "string",
+      "format": "email",
+      "description": "Contact email for applications"
+    },
+    "application_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to apply for the internship"
+    },
+    "company_size": {
+      "type": "string",
+      "enum": ["startup", "small", "medium", "large", "government"],
+      "description": "Size category of the company"
+    },
+    "benefits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional benefits provided during internship"
+    },
+    "skills_offered": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Skills that candidates will learn during the internship"
+    },
+    "certification": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether a certificate will be provided upon completion"
+    },
+    "full_time_potential": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether there's potential for full-time employment after internship"
+    },
+    "language_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Languages required for the position"
+    },
+    "accessibility": {
+      "type": "object",
+      "properties": {
+        "rural_friendly": {
+          "type": "boolean",
+          "description": "Whether the internship is suitable for candidates from rural areas"
+        },
+        "low_bandwidth_work": {
+          "type": "boolean",
+          "description": "Whether work can be done with low internet bandwidth"
+        },
+        "flexible_hours": {
+          "type": "boolean",
+          "description": "Whether the internship offers flexible working hours"
+        }
+      }
+    }
+  }
+}

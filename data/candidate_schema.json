@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Candidate Profile Schema",
+  "description": "Schema for PM Internship candidate profiles",
+  "required": ["id", "education", "skills", "interests", "location"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the candidate"
+    },
+    "name": {
+      "type": "string",
+      "description": "Full name of the candidate"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address of the candidate"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number of the candidate"
+    },
+    "education": {
+      "type": "string",
+      "enum": ["10th", "12th", "diploma", "undergraduate", "postgraduate"],
+      "description": "Highest education level completed"
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["computer", "communication", "sales", "design", "accounting", "teaching", "mechanical", "electrical", "agriculture", "healthcare"]
+      },
+      "minItems": 1,
+      "description": "List of candidate's skills"
+    },
+    "interests": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["technology", "healthcare", "education", "finance", "manufacturing", "agriculture", "retail", "government", "nonprofit"]
+      },
+      "minItems": 1,
+      "description": "List of candidate's sector interests"
+    },
+    "location": {
+      "type": "string",
+      "enum": ["mumbai", "delhi", "bangalore", "chennai", "kolkata", "pune", "hyderabad", "remote", "any"],
+      "description": "Preferred work location"
+    },
+    "experience_level": {
+      "type": "string",
+      "enum": ["fresher", "some_experience", "experienced"],
+      "default": "fresher",
+      "description": "Level of work experience"
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Languages spoken by the candidate"
+    },
+    "availability": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Earliest start date for internship"
+        },
+        "duration_preference": {
+          "type": "string",
+          "enum": ["1-3 months", "3-6 months", "6-12 months", "flexible"],
+          "description": "Preferred internship duration"
+        }
+      }
+    },
+    "background": {
+      "type": "object",
+      "properties": {
+        "is_rural": {
+          "type": "boolean",
+          "description": "Whether candidate is from rural area"
+        },
+        "is_tribal": {
+          "type": "boolean",
+          "description": "Whether candidate is from tribal district"
+        },
+        "is_first_generation_learner": {
+          "type": "boolean",
+          "description": "Whether candidate is first-generation learner"
+        },
+        "digital_literacy_level": {
+          "type": "string",
+          "enum": ["low", "medium", "high"],
+          "description": "Level of digital literacy"
+        }
+      }
+    }
+  }
+}
